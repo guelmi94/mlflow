@@ -1,0 +1,10 @@
+name: readmission_prediction
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      data_path: {type: string, default: "data/DSA-2025_clean_data.tsv"}
+      experiment_name: {type: string, default: "xgboost_readmission_model"}
+    command: "python train.py --data_path {data_path} --experiment_name {experiment_name}"
